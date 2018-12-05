@@ -172,7 +172,7 @@ def main():
 
 
             # ++++++++++++++++++++ debug for reg ++++++++++++++++++++++++++++++++++++++
-            tmp_dir = '/home/song/srpn/tmp/visualization/7_check_train_phase_debug_pos_anchors'
+            tmp_dir = '/home/akaruvally/scratch_dir/tmp/visualization/7_check_train_phase_debug_pos_anchors'
             if not os.path.exists(tmp_dir):
                 os.makedirs(tmp_dir)
             detection = ret['detection_cropped_resized'].copy()
