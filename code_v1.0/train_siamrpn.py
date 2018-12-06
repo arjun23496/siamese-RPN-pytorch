@@ -23,9 +23,9 @@ from shapely.geometry import Polygon
 
 parser = argparse.ArgumentParser(description='PyTorch SiameseRPN Training')
 
-parser.add_argument('--train_path', default='/home/song/srpn/dataset/vot13', metavar='DIR',help='path to dataset')
+parser.add_argument('--train_path', default='/home/akaruvally/scratch/vot2013', metavar='DIR',help='path to dataset')
 
-parser.add_argument('--weight_dir', default='/home/song/srpn/weight', metavar='DIR',help='path to weight')
+parser.add_argument('--weight_dir', default='/home/akaruvally/scratch/weights', metavar='DIR',help='path to weight')
 
 parser.add_argument('--checkpoint_path', default=None, help='resume')
 
