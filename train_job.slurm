@@ -14,7 +14,7 @@ source activate cvpro
 
 hostname
 
-python -u code_v1.0/train_siamrpn.py --train_path=/home/akaruvally/scratch_dir/vot2013 \
+python -u code/train_siamrpn.py --train_path=/home/akaruvally/scratch_dir/vot2013 \
                                     --checkpoint_path=/home/akaruvally/scratch_dir/weights-0690000.pth.tar \
                                     --weight_dir=/home/akaruvally/scratch_dir/weights
 
