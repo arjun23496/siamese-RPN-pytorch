@@ -246,16 +246,16 @@ def main():
             
             print("Epoch:{:04d}\texample:{:06d}/{:06d}({:.2f})%\tsteps:{:010d}\tlr:{:.7f}\tcloss:{:.4f}\trloss:{:.4f}\ttloss:{:.4f}".format(epoch, example+1, args.max_batches, 100*(example+1)/args.max_batches, steps, cur_lr, closses.avg, rlosses.avg, tlosses.avg ))
 
-        if steps % args.save_frequency == 0:
-            file_path = os.path.join(args.weight_dir, 'weights-{:07d}.pth.tar'.format(steps))
-            print("Saving in ", file_path)
-            state = {
-            'epoch' :epoch+1,
-            'state_dict' :model.state_dict(),
-            'optimizer' : optimizer.state_dict(),
-            }
-            torch.save(state, file_path)
-            sys.exit()
+            if steps % args.save_frequency == 0:
+                file_path = os.path.join(args.weight_dir, 'weights-{:07d}.pth.tar'.format(steps))
+                print("Saving in ", file_path)
+                state = {
+                'epoch' :epoch+1,
+                'state_dict' :model.state_dict(),
+                'optimizer' : optimizer.state_dict(),
+                }
+                torch.save(state, file_path)
+                sys.exit()
 
 def intersection(g, p):
     g = Polygon(g[:8].reshape((4, 2)))
