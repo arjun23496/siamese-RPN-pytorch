@@ -255,7 +255,6 @@ def main():
                 'optimizer' : optimizer.state_dict(),
                 }
                 torch.save(state, file_path)
-                sys.exit()
 
 def intersection(g, p):
     g = Polygon(g[:8].reshape((4, 2)))
