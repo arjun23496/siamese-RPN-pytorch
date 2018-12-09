@@ -122,7 +122,7 @@ class Anchor_ms(object):
 
 class TrainDataLoader(object):
     def __init__(self, img_dir_path, out_feature = 17, max_inter = 80, check = False, tmp_dir = '/home/akaruvally/scratch_dir/tmp/visualization'):
-        assert osp.isdir(img_dir_path), 'input img_dir_path error'
+        # assert osp.isdir(img_dir_path), 'input img_dir_path error'
         self.anchor_generator = Anchor_ms(out_feature, out_feature)
         self.img_dir_path = img_dir_path # this is a root dir contain subclass
         self.max_inter = max_inter
@@ -434,23 +434,3 @@ class TrainDataLoader(object):
     
     def __len__(self):
         return len(self.sub_class_dir)
-
-if __name__ == '__main__':
-    # we will do a test for dataloader
-    loader = TrainDataLoader('/home/song/srpn/dataset/simple_vot13', check = True)
-    #print(loader.__len__())
-    index_list = range(loader.__len__())
-    for i in range(1000):
-        ret = loader.__get__(random.choice(index_list))
-        label = ret['pos_neg_diff'][:, 0].reshape(-1)
-        pos_index = list(np.where(label == 1)[0])
-        pos_num = len(pos_index)
-        print(pos_index)
-        print(pos_num)
-        if pos_num != 0 and pos_num != 16:
-            print(pos_num)
-            sys.exit(0)
-        print(i)
-
-
-
